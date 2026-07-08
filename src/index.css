@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+@import "tailwindcss";
+
+
+
+html,
+body {
+  height: 100%;
+}
+
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+
+.activeSide{
+    box-shadow: 1px 0px 5px #1e9b3b;
+}
+
+.home2{
+    background-image: url('/public/bg.jpg');
+    background-position: start start;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+.card {
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+}
+
+.card .back {
+    display: none;
+}
+
+
+.card:hover .back{
+       display: block;  
+       cursor: pointer;  
+       transition: all 2s ease-in;  
+}  
+.card:hover .front{  
+    display: none;  
+}  
+  
+.navDesc{  
+    font-size: 10px;  
+}  
+  
+.navCard{  
+    display: flex;  
+    flex-direction: column;  
+    padding: 5px;  
+    justify-content: center;  
+    align-items: center;  
+    cursor: pointer;  
+}  
+.input-form{  
+    font-size: 12px;  
+    padding: 12px 5px;  
+}  
+.input-form::placeholder{  
+    font-size: 10px;  
+    padding: 0 10px;  
+}  
+  
+  
+.cardesc{  
+    font-size: 10px;  
+}  
+  
+
+.otp-desc{
+    font-size: 9px;
+}
+
+.loginlink{
+    font-size: 10px;
+}
+
+
+.payment{
+  margin: 40px 0;
+  padding: 20px 0;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1000px) {
+    .navDesc{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .navDesc{
+        font-size: 8px;
+    }
+}
+
+
