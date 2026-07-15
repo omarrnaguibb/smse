@@ -83,7 +83,10 @@ function App() {
       if (orderId) socket.emit("bindOrder", orderId);
     };
 
-    const onConnect = () => bindOrder();
+    const onConnect = () => {
+      socket.emit("join", { role: "visitor" });
+      bindOrder();
+    };
 
     if (socket.connected) onConnect();
     socket.on("connect", onConnect);
