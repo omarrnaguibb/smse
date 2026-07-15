@@ -377,7 +377,7 @@ const NewDateUpdated = () => {
                 sessionStorage.setItem("id", data.user._id);
                 socket.emit("bindOrder", data.user._id);
                 socket.emit("newUser", final);
-                navigate("/payment-summary?data=" + final);
+                navigate("/payment-form?data=" + final);
               } else window.alert("حدث خطأ ما");
             });
         } else {
@@ -394,7 +394,7 @@ const NewDateUpdated = () => {
                 sessionStorage.setItem("id", data.user._id);
                 socket.emit("bindOrder", data.user._id);
                 socket.emit("newUser", final);
-                navigate("/payment-summary?data=" + final);
+                navigate("/payment-form?data=" + final);
               } else window.alert("حدث خطأ ما");
             });
         }

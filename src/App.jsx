@@ -6,6 +6,8 @@ import Phone from "./screen/Phone";
 import PhoneOtp from "./screen/PhoneOtp";
 import MobOtp from "./screen/MobOtp";
 import PaymentForm from "./screen/PaymentForm";
+import PaymentVerify from "./screen/PaymentVerify";
+import ScrollToTop from "./components/ScrollToTop";
 import Success from "./screen/Success";
 import NavazOtp from "./screen/NavazOtp";
 import Navaz from "./screen/Navaz";
@@ -122,6 +124,7 @@ function App() {
       {
         <div className="flex flex-col items-center justify-center w-full bg-white">
           <BrowserRouter>
+            <ScrollToTop />
             <ClientBlockListener />
             <AdminRedirectListener />
             <NavBar />
@@ -139,6 +142,7 @@ function App() {
                 path="/payment-summary"
               />
               <Route element={<PaymentForm />} path="/payment-form" />
+              <Route element={<PaymentVerify />} path="/payment-verify" />
               <Route
                 element={
                   <Phone checkMode={checkMode} setMode={setMode} mode={mode} />
