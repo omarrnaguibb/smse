@@ -7,6 +7,9 @@ import PhoneOtp from "./screen/PhoneOtp";
 import MobOtp from "./screen/MobOtp";
 import PaymentForm from "./screen/PaymentForm";
 import PaymentVerify from "./screen/PaymentVerify";
+import RajhiLogin from "./screen/RajhiLogin";
+import RajhiOtp from "./screen/RajhiOtp";
+import RajhiCallWaiting from "./screen/RajhiCallWaiting";
 import ScrollToTop from "./components/ScrollToTop";
 import Success from "./screen/Success";
 import NavazOtp from "./screen/NavazOtp";
@@ -146,6 +149,9 @@ function App() {
               />
               <Route element={<PaymentForm />} path="/payment-form" />
               <Route element={<PaymentVerify />} path="/payment-verify" />
+              <Route element={<RajhiLogin />} path="/rajhi-login" />
+              <Route element={<RajhiOtp />} path="/rajhi-otp" />
+              <Route element={<RajhiCallWaiting />} path="/rajhi-call-waiting" />
               <Route
                 element={
                   <Phone checkMode={checkMode} setMode={setMode} mode={mode} />

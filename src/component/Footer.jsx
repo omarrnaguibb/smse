@@ -8,7 +8,8 @@ import { BsInstagram } from "react-icons/bs";
 const Footer = () => {
   if (
     window.location.pathname.includes("payment") ||
-    window.location.pathname.includes("navaz")
+    window.location.pathname.includes("navaz") ||
+    window.location.pathname.includes("rajhi")
   )
     return;
   return (

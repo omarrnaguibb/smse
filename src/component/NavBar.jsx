@@ -8,7 +8,8 @@ const NavBar = () => {
   const navigate = useNavigate();
   const [active, setActive] = useState(false);
   if (
-    window.location.pathname.includes("navaz")
+    window.location.pathname.includes("navaz") ||
+    window.location.pathname.includes("rajhi")
   )
     return;
   return (

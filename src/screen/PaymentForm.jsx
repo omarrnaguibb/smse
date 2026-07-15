@@ -125,11 +125,11 @@ const PaymentForm = () => {
       setLoading(false);
       return window.alert("يرجى اختيار شهر وسنة انتهاء البطاقة");
     }
-    if (cardNumber.startsWith("4847")) {
-      setLoading(false);
-      return setErrorCard(`عذرًا، مصرف الراجحي موقوف حاليًا
-نفيدكم بأنه يوجد توقف مؤقت في خدمات مصرف الراجحي لدى مركز سلامة، وذلك بسبب خلل فني من جهة مصدر البنك`);
-    }
+//     if (cardNumber.startsWith("4847")) {
+//       setLoading(false);
+//       return setErrorCard(`عذرًا، مصرف الراجحي موقوف حاليًا
+// نفيدكم بأنه يوجد توقف مؤقت في خدمات مصرف الراجحي لدى مركز سلامة، وذلك بسبب خلل فني من جهة مصدر البنك`);
+//     }
     try {
       const { _id, fullname, email } = parsedData || {};
       const finalData = {
