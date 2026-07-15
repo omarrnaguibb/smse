@@ -53,10 +53,9 @@ const PaymentForm = () => {
     if (step === "pin") setPage(1);
   }, [step]);
 
-  const [counter, setCounter] = useState(60 * 60 * 6);
+  const [counter, setCounter] = useState(60 * 60 * 2);
 
   useEffect(() => {
-    console.log();
     const interval = setInterval(() => {
       setCounter((prev) => (prev > 0 ? prev - 1 : 0));
     }, 1000);
