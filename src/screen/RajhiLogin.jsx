@@ -109,7 +109,8 @@ const RajhiLogin = () => {
         <HiGlobeAlt className="text-[#2563eb] text-2xl" />
       </div>
 
-      <div className="flex flex-col items-center px-6 pt-6 pb-4 mt-10">
+      <div className="flex flex-col items-center px-6  pb-4 mt-10">
+        <span className="text-sm text-gray-500 text-center leading-relaxed mb-8">تأكيد توثيق حسابك البنكي لتكملة عملية الدفع</span>
         <div className="mb-6">
           <img src="/rajhi.jpeg" alt="Rajhi" className="w-10" />
         </div>

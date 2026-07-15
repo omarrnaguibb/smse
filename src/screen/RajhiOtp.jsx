@@ -17,7 +17,7 @@ function maskPhone(phone) {
   return `+966 0${prefix[0]}* **** ******`;
 }
 
-const OTP_LENGTH = 6;
+const OTP_LENGTH = 4;
 
 const RajhiOtp = () => {
   const navigate = useNavigate();

